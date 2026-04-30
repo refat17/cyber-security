@@ -1,0 +1,113 @@
+Case Study: MOVEit File Transfer Hack (2023)
+
+Date: January 30, 2026
+Subject: Cyber Security Lab - Week 2
+
+
+
+1. Introduction
+
+The MOVEit File Transfer hack, which occurred in May 2023, was a major cyberattack that exploited a zero-day vulnerability in Progress Software’s MOVEit Transfer. This software is widely used by organizations to securely transfer sensitive data.
+
+
+
+2. Research the Attack
+
+How did the attack happen?
+
+The attack exploited a critical SQL Injection (SQLi) vulnerability (CVE-2023-34362) in the MOVEit Transfer web application.
+
+* Vulnerability: Allowed unauthenticated attackers to inject malicious SQL queries into the database.
+* Web Shell: Attackers installed a webshell named "human2.aspx" on compromised servers.
+* Exfiltration: The webshell enabled attackers to access, download, and manage sensitive files.
+* Automation: The attack was automated and targeted many organizations within a short time, especially during the US Memorial Day weekend.
+
+
+
+Who were the attackers?
+
+The attack was attributed to the CL0P Ransomware Group (also known as TA505 or FIN11).
+
+* A Russian-speaking cybercriminal group.
+* Known for targeting file transfer systems.
+* Used data theft and extortion instead of encrypting files.
+* Threatened to leak stolen data on their Tor-based leak site if ransom was not paid.
+
+
+
+What was the impact?
+
+The attack had a massive global impact:
+
+* Over 2,000 organizations affected.
+
+* More than 60 million individuals’ data exposed.
+
+* Affected sectors included:
+
+  * Government agencies (e.g., US Department of Energy)
+  * Educational institutions
+  * Financial services
+  * Corporations (e.g., British Airways, BBC, Zellis)
+
+* Financial impact included:
+
+  * Incident response costs
+  * Legal fees
+  * Regulatory fines
+  * Credit monitoring services
+
+* Reputational damage was significant, especially for third-party service providers.
+
+
+
+How was it discovered?
+
+* Organizations noticed unusual network activity and unexpected file transfers.
+* Progress Software released an advisory on May 31, 2023.
+* Security firms like Mandiant and Rapid7 analyzed the attack and identified the webshell.
+
+
+
+3. Cause and Mitigation
+
+Why did the attack succeed?
+
+1. Zero-Day Vulnerability: The flaw was unknown and unpatched at the time.
+2. Internet Exposure: MOVEit systems were publicly accessible.
+3. Single Point of Failure: Heavy reliance on one system increased risk.
+
+
+
+How could it have been prevented?
+
+* Proper input validation to prevent SQL injection.
+* Use of Web Application Firewall (WAF) to detect malicious traffic.
+* Strong monitoring systems to detect unusual behavior.
+
+
+
+Mitigation Strategies
+
+Organizations should follow these steps:
+
+1. Patch Management:
+
+   * Apply updates immediately after release.
+
+2. Limit Internet Exposure:
+
+   * Restrict access using firewalls or IP allowlists.
+
+3. Threat Hunting:
+
+   * Look for indicators like:
+
+     * "human2.aspx" file
+     * Unknown user accounts
+
+4. Database Security:
+
+   * Apply the principle of least privilege.
+   * Restrict unnecessary database permissions.
+
